@@ -1,0 +1,6 @@
+to create an img frm a container- docker "container-id" repo-folder/image-name
+for ex-  docker commit a2558a7816c4  db/apache-test (the image gets create, however the container fails to get connected to appache srvr because it doesnt have an entry point)
+
+to create an img with "an entry point"-   docker commit --change='ENTRYPOINT ["apachectl", "-DFOREGROUND"]' 2ad2679f2676  db/apache-test:1.1
+
+to create a container img frm the dockerfile- docker build -t db/apache:1.2 .
